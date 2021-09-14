@@ -21,3 +21,13 @@ C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\
 C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\obj\Debug\net5.0\ref\RestWithASP-NET5.dll
 C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\obj\Debug\net5.0\RestWithASP-NET5.pdb
 C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\obj\Debug\net5.0\RestWithASP-NET5.genruntimeconfig.cache
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\Microsoft.Bcl.HashCode.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\MySqlConnector.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\bin\Debug\net5.0\Pomelo.JsonObject.dll
+C:\Projetos\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\RestWithASP-NET5\obj\Debug\net5.0\RestWithASP-NET5.csproj.CopyComplete

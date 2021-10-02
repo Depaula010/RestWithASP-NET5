@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace RestWithASP_NET5.Controllers
 {
+    [ApiVersion("1")]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/v{version:apiVersion}")]
     public class PersonController : Controller
     {
         private readonly ILogger<PersonController> _logger;

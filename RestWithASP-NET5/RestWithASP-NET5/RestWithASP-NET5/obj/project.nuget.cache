@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J3zpAugfW1EoyH7YizCMepH9TEQ097+60ChXV9NERAAqGw3M14MZRI3V1jNYYZAX8Xn/NuhlGEioBBsQJp2gYA==",
+  "dgSpecHash": "IWIDDR5/aZNlBEA/5GbLFBZ2VNC3zdWy1g35T84vP6/Y3Vn5MsXB7v040O98frdRcoVcL5BnXtHpzgWGfaU3wg==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\RestWithASP-NET5\\RestWithASP-NET5\\RestWithASP-NET5\\RestWithASP-NET5\\RestWithASP-NET5\\RestWithASP-NET5.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Depaula\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\4.1.1\\microsoft.aspnetcore.mvc.versioning.4.1.1.nupkg.sha512",
     "C:\\Users\\Depaula\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Depaula\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

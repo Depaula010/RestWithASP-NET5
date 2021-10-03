@@ -81,9 +81,11 @@ namespace RestWithASP_NET5
         {
             try
             {
+                //EVOLVE É UMA FERRAMENTA QUE PERMITE EXECUTAR MIGRATIONS
                 var evolveConnection = new MySql.Data.MySqlClient.MySqlConnection(mySqlConnection);
                 var evolve = new Evolve.Evolve(evolveConnection, msg => Log.Information(msg))
                 {
+                    //CASO APAREÇA ERRO PODE SER ENCODING MUDAR PARA UTF8
                     Locations = new List<string> { "db/migrations", "db/dataset" },
                     IsEraseDisabled = true,
                 };

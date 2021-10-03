@@ -35,6 +35,7 @@ namespace RestWithASP_NET5
 
             services.AddControllers();
 
+            //RECUPERANDO A CONNECTION STRING DO BANCO DE DADOS
             string mySqlConnection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<MySQLContext>(options => options.UseMySql(mySqlConnection));
 

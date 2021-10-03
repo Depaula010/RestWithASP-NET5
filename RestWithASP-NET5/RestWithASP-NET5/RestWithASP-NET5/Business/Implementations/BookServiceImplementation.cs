@@ -1,26 +1,20 @@
 ﻿using RestWithASP_NET5.Model;
-using RestWithASP_NET5.Model.Context;
 using RestWithASP_NET5.Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace RestWithASP_NET5.Business.Implementations
 {
     public class BookBusinessImplementation : IBookBusiness
     {
-        private readonly IBookBusiness _repository;
+        private readonly IBookRepository _repository;
 
-        public BookBusinessImplementation(IBookBusiness repository)
+        public BookBusinessImplementation(IBookRepository repository)
         {
             _repository = repository;
         }
 
         public Book Create(Book book)
         {
-
             return _repository.Create(book);
         }
 

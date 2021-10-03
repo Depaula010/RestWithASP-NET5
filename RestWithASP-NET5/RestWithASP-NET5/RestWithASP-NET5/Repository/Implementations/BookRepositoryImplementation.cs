@@ -32,12 +32,12 @@ namespace RestWithASP_NET5.Repository.Implementations
 
         public void Delete(long id)
         {
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            var result = _context.Books.SingleOrDefault(p => p.Id.Equals(id));
             if (result != null)
             {
                 try
                 {
-                    _context.Persons.Remove(result);
+                    _context.Books.Remove(result);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -63,7 +63,7 @@ namespace RestWithASP_NET5.Repository.Implementations
             if (!Exists(book.Id)) 
                 return null;
 
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(book.Id));
+            var result = _context.Books.SingleOrDefault(p => p.Id.Equals(book.Id));
 
             if (result != null)
             {

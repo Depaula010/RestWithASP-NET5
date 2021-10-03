@@ -29,7 +29,7 @@ namespace RestWithASP_NET5.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(long id)
         {
-            var person = _personBusiness.FindBy(id);
+            var person = _personBusiness.FindById(id);
             if (person == null) return NotFound();
             return Ok(person);
         }

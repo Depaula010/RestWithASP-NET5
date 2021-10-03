@@ -1,5 +1,6 @@
 ﻿using RestWithASP_NET5.Model;
 using RestWithASP_NET5.Model.Context;
+using RestWithASP_NET5.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,81 +11,39 @@ namespace RestWithASP_NET5.Business.Implementations
 {
     public class PersonBusinessImplementation : IPersonBusiness
     {
-        private MySQLContext _context;
+        private readonly IPersonRepository _repository;
 
-        public PersonBusinessImplementation(MySQLContext context)
+        public PersonBusinessImplementation(IPersonRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
         public Person Create(Person person)
         {
-            try
-            {
-                _context.Add(person);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            return person;
+
+            return _repository.Create(person);
         }
 
         public void Delete(long id)
         {
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
-            if (result != null)
-            {
-                try
-                {
-                    _context.Persons.Remove(result);
-                    _context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    throw;
-                }
-            }
+            _repository.Delete(id);
         }
 
         public List<Person> FindAll()
         {
-            return _context.Persons.ToList();
+            return _repository.FindAll();
         }
 
-        public Person FindBy(long id)
+        public Person FindById(long id)
         {
-            return _context.Persons.SingleOrDefault(p => p.Id.Equals(id));
+            return _repository.FindById(id);
 
         }
 
         public Person Update(Person person)
         {
-            if (!Exists(person.Id)) 
-                return new Person();
-
-            var result = _context.Persons.SingleOrDefault(p => p.Id.Equals(person.Id));
-
-            if (result != null)
-            {
-                try
-                {
-                    _context.Entry(result).CurrentValues.SetValues(person);
-                    _context.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    throw;
-                }
-            }
-
-            return person;
+            return _repository.Update(person);
         }
 
-        private bool Exists(long id)
-        {
-            return _context.Persons.Any(p => p.Id.Equals(id));
-        }
     }
 }

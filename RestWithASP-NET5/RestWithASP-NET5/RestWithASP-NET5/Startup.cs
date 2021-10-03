@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using RestWithASP_NET5.Repository;
 using RestWithASP_NET5.Repository.Implementations;
 using Serilog;
+using RestWithASP_NET5.Repository.Generic;
 
 namespace RestWithASP_NET5
 {
@@ -57,6 +58,8 @@ namespace RestWithASP_NET5
             services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
             services.AddScoped<IBookBusiness, BookBusinessImplementation>();
             services.AddScoped<IBookRepository, BookRepositoryImplementation>();
+
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

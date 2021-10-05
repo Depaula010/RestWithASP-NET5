@@ -1,19 +1,14 @@
 ﻿using RestWithASP_NET5.Model;
-using RestWithASP_NET5.Model.Context;
 using RestWithASP_NET5.Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace RestWithASP_NET5.Business.Implementations
 {
     public class PersonBusinessImplementation : IPersonBusiness
     {
-        private readonly IPersonRepository _repository;
+        private readonly IRepository<Person> _repository;
 
-        public PersonBusinessImplementation(IPersonRepository repository)
+        public PersonBusinessImplementation(IRepository<Person> repository)
         {
             _repository = repository;
         }

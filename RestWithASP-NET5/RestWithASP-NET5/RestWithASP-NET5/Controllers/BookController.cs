@@ -2,11 +2,15 @@
 using Microsoft.Extensions.Logging;
 using RestWithASP_NET5.Model;
 using RestWithASP_NET5.Business;
+using RestWithASP_NET5.Hypermedia.Filters;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RestWithASP_NET5.Controllers
 {
     [ApiVersion("1")]
     [ApiController]
+    [Authorize("Bearer")]
     [Route("api/[controller]/v{version:apiVersion}")]
     public class BookController : Controller
     {
@@ -20,6 +24,11 @@ namespace RestWithASP_NET5.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType((200), Type = typeof(List<BookVO>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get()
         {
             return Ok(_bookBusiness.FindAll());
@@ -27,6 +36,11 @@ namespace RestWithASP_NET5.Controllers
 
 
         [HttpGet("{id}")]
+        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMediaFilter))]
         public IActionResult Get(long id)
         {
             var book = _bookBusiness.FindById(id);
@@ -35,7 +49,12 @@ namespace RestWithASP_NET5.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Book book)
+        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMediaFilter))]
+        public IActionResult Post([FromBody] BookVO book)
         {
             
             if (book == null) return BadRequest();
@@ -43,7 +62,12 @@ namespace RestWithASP_NET5.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] Book book)
+        [ProducesResponseType((200), Type = typeof(BookVO))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [TypeFilter(typeof(HyperMediaFilter))]
+        public IActionResult Put([FromBody] BookVO book)
         {
 
             if (book == null) return BadRequest();
@@ -51,6 +75,9 @@ namespace RestWithASP_NET5.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
         public IActionResult Delete(long id)
         {
             _bookBusiness.Delete(id);

@@ -1,0 +1,47 @@
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using RestWithASP_NET5.Business;
+using RestWithASP_NET5.Data.VO;
+using RestWithASP_NET5.Hypermedia.Filters;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace RestWithASP_NET5.Controllers
+{
+    [ApiVersion("1")]
+    [Route("api/[controller]/v{version:apiVersion}")]
+    [ApiController]
+    public class AuthController : ControllerBase
+    {
+        private ILoginBusiness _loginBusiness;
+
+        public AuthController(ILoginBusiness loginBusiness)
+        {
+            _loginBusiness = loginBusiness;
+        }
+
+        [HttpPost]
+        [Route("signin")]
+        public IActionResult Signin([FromBody] UserVO user)
+        {
+            if (user == null) return BadRequest("Invalid client request");
+            TokenVO token = _loginBusiness.ValidateCredentials(user);
+            if (token == null) return Unauthorized();
+
+            return Ok(token);
+        }
+
+        [HttpPost]
+        [Route("refresh")]
+        public IActionResult Refresh([FromBody] TokenVO tokenVO)
+        {
+            if (tokenVO == null) return BadRequest("Invalid client request");
+            TokenVO token = _loginBusiness.ValidateCredentials(tokenVO);
+            if (token == null) return BadRequest("Invalid client request");
+
+            return Ok(token);
+        }
+    }
+}

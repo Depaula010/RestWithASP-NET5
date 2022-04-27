@@ -56,5 +56,14 @@ namespace RestWithASP_NET5.Repository
             return BitConverter.ToString(hashedBytes);
         }
 
+        public bool RevokeToken(string userName)
+        {
+            var user = _context.Users.SingleOrDefault(u => (u.UserName == userName));
+            if (user is null) return false;
+            user.RefreshToken = null;
+            _context.SaveChanges();
+
+            return true;
+        }
     }
 }

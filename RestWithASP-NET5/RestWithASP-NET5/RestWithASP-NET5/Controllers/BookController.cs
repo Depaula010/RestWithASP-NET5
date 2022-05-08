@@ -61,6 +61,23 @@ namespace RestWithASP_NET5.Controllers
             return Ok(_bookBusiness.Create(book));
         }
 
+        // Configura o Swagger para a operação
+        // http://localhost:{porta}/api/persons/v1/
+        // [SwaggerResponse((202), Type = typeof(List<Book>))]
+        // determina o objeto de retorno em caso de sucesso List<Book>
+        // O [SwaggerResponse(XYZ)] define os códigos de retorno 204, 400 e 401
+        [HttpGet("{sortDirection}/{pageSize}/{page}")]
+        [ProducesResponseType((200), Type = typeof(List<BookVO>))]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(401)]
+        [Authorize("Bearer")]
+        [TypeFilter(typeof(HyperMediaFilter))]
+        public IActionResult GetPagedSearch([FromQuery] string name, string sortDirection, int pageSize, int page)
+        {
+            return new OkObjectResult(_bookBusiness.FindWithPagedSearch(name, sortDirection, pageSize, page));
+        }
+
         [HttpPut]
         [ProducesResponseType((200), Type = typeof(BookVO))]
         [ProducesResponseType(204)]

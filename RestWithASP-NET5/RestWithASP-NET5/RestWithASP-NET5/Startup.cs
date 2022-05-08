@@ -135,7 +135,7 @@ namespace RestWithASP_NET5
             services.AddTransient<ITokenService, TokenService>();
 
             services.AddScoped<IUserRepository, UserRepository>();
-
+            services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
 
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }

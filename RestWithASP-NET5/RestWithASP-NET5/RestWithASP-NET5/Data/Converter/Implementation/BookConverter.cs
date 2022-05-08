@@ -47,5 +47,11 @@ namespace RestWithASP_NET5.Data.Converter.Implementation
             if (origin == null) return null;
             return origin.Select(item => Parse(item)).ToList();
         }
+
+        public List<BookVO> ParseList(List<Book> origin)
+        {
+            if (origin == null) return new List<BookVO>();
+            return origin.Select(item => Parse(item)).ToList();
+        }
     }
 }

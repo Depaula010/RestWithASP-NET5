@@ -12,5 +12,7 @@ namespace RestWithASP_NET5.Repository
         T Update(T item);
         void Delete(long id);
         bool Exists(long id);
+        List<T> FindWithPagedSearch(string query);
+        int GetCount(string query);
     }
 }

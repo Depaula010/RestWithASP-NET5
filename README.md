@@ -1,1 +1,13 @@
-# RestWithASP-NET5
+# API Resful
+- Desenvolvemos uma API RESTFul do 0 absoluto
+- Como trabalhar com Postman criando váriaveis de ambiente
+- Paginação de APIs
+- Versionamento de APIs
+- Disponibilizar download de arquivos na sua API
+- Fazer upload de arquivos na sua API
+- Documentar uma API com o Swagger (OpenAPI)
+- Técnicas de Autenticação REST com JWT
+- Utilizar os principais serviços da Azure como Azure Database, Azure Container Registry, Azure App Services etc
+- Integração e Deploy Contínuos envolvendo o Github, o Github Actions e a Azure
+- Conceitos básicos de Docker e Docker Compose
+- Como Consumir a API com ReactJS
